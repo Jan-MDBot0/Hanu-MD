@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👑 HANU-MD 👑</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ==========================================
+           CYBERPUNK NEON EDITION — HANU-MD
+           Complete redesign with dark cyber aesthetic
+           ========================================== */
+
+        /* ── Reset ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Rajdhani', sans-serif;
+            background: #0b0b0e;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(0, 240, 255, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 80% 50%, rgba(123, 47, 252, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 50% 100%, rgba(255, 45, 149, 0.03) 0%, transparent 50%);
+            padding: 20px;
+        }
+
+        /* ── Main Card ── */
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(11, 11, 14, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 28px;
+            padding: 32px 24px 28px;
+            text-align: center;
+            border: 1px solid rgba(0, 240, 255, 0.15);
+            box-shadow:
+                0 0 40px rgba(0, 240, 255, 0.04),
+                0 0 80px rgba(123, 47, 252, 0.03),
+                inset 0 0 40px rgba(0, 240, 255, 0.02);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.4s;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(123, 47, 252, 0.10), rgba(255, 45, 149, 0.08), rgba(0, 240, 255, 0.15));
+            background-size: 300% 300%;
+            animation: borderGlow 8s ease-in-out infinite;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        @keyframes borderGlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ── Neon Text Animations ── */
+        @keyframes neonPulse {
+            0%,
+            100% {
+                text-shadow: 0 0 10px rgba(0, 240, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.1);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 60px rgba(0, 240, 255, 0.2);
+            }
+        }
+
+        @keyframes gradientText {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        .neon-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #00f0ff, #7b2ffc, #ff2d95, #00f0ff);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 6s linear infinite;
+            margin-bottom: 2px;
+        }
+
+        .neon-sub {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            background: linear-gradient(90deg, #7b2ffc, #00f0ff, #7b2ffc);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 4s linear infinite;
+            margin-bottom: 4px;
+        }
+
+        .status-text {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(0, 240, 255, 0.7);
+            margin: 10px 0 14px 0;
+            animation: neonPulse 3s ease-in-out infinite;
+        }
+
+        .status-text .highlight {
+            color: #ff2d95;
+            font-weight: 700;
+        }
+
+        /* ── Input Container (Neon Border) ── */
+        .neon-input-wrap {
+            padding: 2.5px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #00f0ff, #7b2ffc, #ff2d95, #00f0ff);
+            background-size: 300% 300%;
+            animation: borderGlow 4s ease-in-out infinite;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 18px auto;
+            transition: box-shadow 0.3s;
+        }
+
+        .neon-input-wrap:focus-within {
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+        }
+
+        .neon-input-wrap input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 16px 14px;
+            border-radius: 12px;
+            background: #0b0b0e;
+            color: #fff;
+            text-align: center;
+            font-size: 1.1rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .neon-input-wrap input::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        /* ── Button Container ── */
+        .neon-btn-wrap {
+            padding: 2.5px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #ff2d95, #7b2ffc, #00f0ff, #ff2d95);
+            background-size: 300% 300%;
+            animation: borderGlow 4s ease-in-out infinite;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 18px auto;
+            cursor: pointer;
+            transition: transform 0.25s cubic-bezier(.34, 1.56, .64, 1);
+            border: none;
+            display: block;
+        }
+
+        .neon-btn-wrap:hover {
+            transform: scale(1.04);
+        }
+
+        .neon-btn-wrap:active {
+            transform: scale(0.96);
+        }
+
+        .btn-inner {
+            background: #0b0b0e;
+            color: #fff;
+            display: block;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            -webkit-text-fill-color: #fff;
+        }
+
+        .btn-inner:hover {
+            background: rgba(0, 240, 255, 0.04);
+        }
+
+        /* ── Result Box ── */
+        .neon-result-wrap {
+            padding: 2.5px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #7b2ffc, #00f0ff, #ff2d95, #7b2ffc);
+            background-size: 300% 300%;
+            animation: borderGlow 5s ease-in-out infinite;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            display: none;
+            transition: all 0.4s ease;
+        }
+
+        .neon-result-wrap.show {
+            display: block;
+            animation: fadeSlideIn 0.5s cubic-bezier(.34, 1.56, .64, 1);
+        }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(12px) scale(0.96);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .result-inner {
+            background: #0b0b0e;
+            border-radius: 12px;
+            padding: 16px 14px;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 6px;
+            text-align: center;
+            word-break: break-all;
+        }
+
+        .result-inner .code-value {
+            color: #00f0ff;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+        }
+
+        .result-inner .error-text {
+            color: #ff2d95;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+        }
+
+        .result-inner .loading-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 400;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .footer p {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 400;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer .brand {
+            background: linear-gradient(90deg, #00f0ff, #7b2ffc, #ff2d95);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+        }
+
+        .footer .edition {
+            color: rgba(255, 255, 255, 0.12);
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+        }
+
+        /* ── Decorative line ── */
+        .divider {
+            width: 60px;
+            height: 2px;
+            margin: 10px auto 12px;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
+            border-radius: 4px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px 16px 20px;
+            }
+            .neon-title {
+                font-size: 1.3rem;
+            }
+            .neon-sub {
+                font-size: 0.95rem;
+                letter-spacing: 2px;
+            }
+            .neon-input-wrap input {
+                font-size: 1rem;
+                padding: 14px 12px;
+            }
+            .btn-inner {
+                font-size: 0.75rem;
+                padding: 12px 14px;
+            }
+            .result-inner {
+                font-size: 1rem;
+                letter-spacing: 4px;
+                padding: 14px 12px;
+                min-height: 48px;
+            }
+        }
+
+        /* ── Scrollbar Styling ── */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0b0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00f0ff, #7b2ffc);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- TITLE -->
+        <h1 class="neon-title">👑 HANU-MD 👑</h1>
+        <h2 class="neon-sub">PAIR CODE</h2>
+
+        <div class="divider"></div>
+
+        <p class="status-text">📱 TYPE YOUR <span class="highlight">WHATSAPP</span> NUMBER</p>
+
+        <!-- INPUT -->
+        <div class="neon-input-wrap">
+            <input type="text" id="number" placeholder="923237045919" autocomplete="off" />
+        </div>
+
+        <!-- BUTTON -->
+        <button class="neon-btn-wrap" onclick="getCode()">
+            <span class="btn-inner">⟡ GET PAIR CODE ⟡</span>
+        </button>
+
+        <!-- RESULT BOX -->
+        <div class="neon-result-wrap" id="resultWrap">
+            <div class="result-inner" id="codeDisplay">----</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p class="brand">✦ HANU-MD ✦</p>
+            <p class="edition">MINI BOT EDITION 2026</p>
+        </div>
+
+    </div>
+
+    <script>
+        async function getCode() {
+            const numInput = document.getElementById('number');
+            const rawNum = numInput.value.replace(/[^0-9]/g, '');
+            const resultWrap = document.getElementById('resultWrap');
+            const codeDisplay = document.getElementById('codeDisplay');
+
+            // ── Validate ──
+            if (!rawNum) {
+                resultWrap.classList.add('show');
+                codeDisplay.innerHTML =
+                    '<span class="error-text">⛔ APNA NUMBER LIKHE</span>';
+                return;
+            }
+
+            // ── Loading ──
+            resultWrap.classList.add('show');
+            codeDisplay.innerHTML =
+                '<span class="loading-text">⟳ CONNECTING...</span>';
+
+            try {
+                const res = await fetch(`/code?number=${rawNum}`);
+                const data = await res.json();
+
+                if (data.code) {
+                    codeDisplay.innerHTML =
+                        `<span class="code-value">${data.code}</span>`;
+                } else {
+                    codeDisplay.innerHTML =
+                        '<span class="error-text">⛔ SERVER FULL</span>';
+                }
+            } catch (err) {
+                codeDisplay.innerHTML =
+                    '<span class="error-text">⛔ SERVER ERROR</span>';
+            }
+        }
+
+        // ── Enter key support ──
+        document.getElementById('number').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') getCode();
+        });
+
+        // ── Auto-focus ──
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('number').focus();
+        });
+    </script>
+
+</body>
+</html>
